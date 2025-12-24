@@ -108,6 +108,7 @@ const Hero = () => {
                   ].map((person) => (
                     <div key={person.id} className="relative group">
                       <img
+                        loading="lazy"
                         src={person.image}
                         alt={person.name}
                         className="w-10 h-10 rounded-full border-2 border-white object-cover 
@@ -181,6 +182,7 @@ const Hero = () => {
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
                     alt="TeamFlow Dashboard - Project management interface showing tasks, timelines, and team collaboration"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
                   />
                   <div className="absolute top-[10%] left-[10%] w-[20%] h-[20%] bg-white/10 backdrop-blur-sm rounded-lg"></div>
                   <div className="absolute bottom-[10%] right-[10%] w-[20%] h-[20%] bg-gradient-to-br from-primary/20 to-cyan-600/20 backdrop-blur-sm rounded-lg"></div>

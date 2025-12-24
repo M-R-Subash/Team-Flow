@@ -89,7 +89,7 @@ function Footer() {
           </div>
         </div>
         
-        {/* Newsletter Signup - Hidden on mobile to reduce height */}
+        {/* Newsletter Signup */}
         <div className="border-t border-gray-800 pt-8 mb-8 hidden md:block">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
@@ -115,7 +115,7 @@ function Footer() {
           </div>
         </div>
         
-        {/* Legal & Copyright - Assessment requirement: Legal placeholders */}
+        {/* Legal & Copyright*/}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-500 text-sm mb-4 md:mb-0 text-center md:text-left">

@@ -7,10 +7,8 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // Check if we're on homepage for pricing link
   const isHomePage = location.pathname === "/";
 
-  // Handle scroll effect for glassier navbar
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -19,14 +17,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Navigation links - all use react-router Link for SPA navigation
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
     { name: "Blog", path: "/blog" },
   ];
 
-  // Smooth scroll for pricing anchor on homepage
   const handlePricingClick = (e) => {
     if (isHomePage) {
       e.preventDefault();
@@ -39,8 +35,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full">
-      {/* Desktop & Tablet - Glassy Navbar with scroll effect */}
+    <header className="sticky top-0 z-30 w-full">
+      {/* Desktop & Tablet */}
       <div
         className={`hidden md:block transition-all duration-300 ${
           isScrolled
@@ -83,7 +79,7 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* Pricing Link - Only on homepage */}
+            {/* Pricing Link*/}
             {isHomePage && (
               <a
                 href="#pricing"
@@ -115,7 +111,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile - White Navbar */}
+      {/* Mobile */}
       <div className="md:hidden bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           {/* Logo */}
@@ -132,7 +128,7 @@ const Navbar = () => {
             </h1>
           </Link>
 
-          {/* Tablet Mode: Free Trial Button next to menu (visible on tablet) */}
+          {/* Tablet Mode */}
           <div className="hidden sm:flex items-center gap-3">
             <button
               className="h-9 px-6 rounded-lg bg-primary text-sm font-bold text-white shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-300 flex items-center gap-2 group"
@@ -155,7 +151,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Mode: Only menu button */}
+          {/* Mobile Mode*/}
           <div className="sm:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -200,7 +196,7 @@ const Navbar = () => {
                 </Link>
               ))}
 
-              {/* Pricing Link - Only on homepage */}
+              {/* Pricing Link */}
               {isHomePage && (
                 <a
                   href="#pricing"
@@ -238,7 +234,6 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Tablet-specific: Already have button in header, so hide here */}
             <div className="sm:hidden mt-4 pt-4 border-t border-gray-200">
               <p className="text-xs text-text-muted text-center">
                 No credit card required • 14-day free trial
